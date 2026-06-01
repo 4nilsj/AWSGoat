@@ -3278,7 +3278,8 @@ resource "aws_s3_object" "upload_folder_prod" {
 
 #Development bucket
 resource "aws_s3_bucket" "dev" {
-  bucket = "dev-blog-awsgoat-bucket-${data.aws_caller_identity.current.account_id}"
+  bucket        = "dev-blog-awsgoat-bucket-${data.aws_caller_identity.current.account_id}"
+  force_destroy = true
 
   tags = {
     Name        = "Development bucket"
